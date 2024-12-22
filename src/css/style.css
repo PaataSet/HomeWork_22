@@ -16,7 +16,19 @@ ul {
 img {
   max-width: 100%;
 }
+body {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
 
 h1 {
+  padding: 20px 0 20px 0;
   font-size: 50px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
