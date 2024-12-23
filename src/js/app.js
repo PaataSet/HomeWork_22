@@ -33,7 +33,7 @@ fetch("https://jsonplaceholder.typicode.com/users")
       return {
         name: el.name,
         email: el.email,
-        address: el.address,
+        address: el.address.street,
       };
     });
 
@@ -43,13 +43,15 @@ fetch("https://jsonplaceholder.typicode.com/users")
           `<div class="card">
             <h2>${el.name}</h2>
             <p>${el.email}</p>
-            <div class="price-line">
-                  <p>${el.address}</p>
-             
-             </div> 
-            
-        
-        </div>`
+            <p>${
+              el.address.street +
+              ", " +
+              el.address.suite +
+              ", " +
+              el.address.city
+            }</p>
+               
+          </div>`
       );
       return formatedData.join(" ");
     }
